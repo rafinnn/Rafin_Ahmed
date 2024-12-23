@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dxopql8fd/image/upload/v1734945936/20241223_152402_hyxw1c.jpg">
+    <title>My Photo Gallery</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        p{
+            font-size:20px;
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            font-size: 2rem; /* Large font size */
+            padding: 20px 40px; /* Large padding */
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF; /* Blue color */
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+        }
+        button img {
+            width: 40px; /* Adjust the size of the icon */
+            height: 40px;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        button:active {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <a href="https://drive.google.com/drive/folders/1kDUFAT76j3Uy_yQZHrw7rANqfjvF_WB0" target="_blank">
+        <button>
+            <img src="https://img.icons8.com/?size=100&id=67537&format=png&color=000000" alt="Gallery Icon">
+           <p>My Photo Gallery</p>
+        </button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,624 @@
+/* General Styles */
+body{
+  margin: 0;
+  padding: 0;
+  font-family: cuprum;
+  background: black;
+  color: white;
+  overflow-x: hidden;  
+   margin-top: 80px;
+}
+
+/* Background with multiple layers for star/nebula replacement */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translate(-50%, -50%); /* Adjust to perfectly center the image */
+  background: url('https://res.cloudinary.com/dxopql8fd/image/upload/v1734839904/hprrpmpbu6k7lr06lnie.png') no-repeat center center;
+    background-size: contain;
+    overlay:none;
+    margin-top: 120px;
+    opacity:0.09;
+    overflow-x: auto;  
+    pointer-events: none; /* Makes the image non-interactable */
+  z-index: -1; /* Push the image behind all content */
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: ;
+  height: ;
+  background: transparent;
+  z-index: -1;
+  overflow-x: auto;  
+}
+.sign{
+    width: 60px;
+    float:right;
+    transform: rotate(0deg);
+}
+
+.header nav a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 40px;
+  transition: color 0.3s;
+
+}
+.header nav{
+    margin-right:40px;
+}
+.header nav a:hover {
+  color: white;
+}
+
+  .biodata-box {
+            width: 300px;
+            padding: 20px;
+            margin: 50px auto;            
+            color: white;
+            font-family: cuprum;
+            border-radius: 10px;
+            background: rgba(40, 40, 40, 0.9);
+  border: 1px solid #58a6ff;
+  box-shadow: 0px 0px 10px rgba(88, 166, 255, 0.7);
+            
+        }
+        .biodata-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            
+        }
+/* Bio Section */
+.bio {
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 40px;
+}
+.bio-image img {
+  width: 170px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px #58a6ff;
+  display: block;
+  margin: 0 auto;
+  animation: none;
+  transform: none;
+}
+.bio-content {
+  margin-top: 20px;
+}
+
+/* Writings Section */
+.writings {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  height: 300px; /* Increased height */
+  scroll-behavior: smooth;
+}
+.writings .card {
+  width: 290px;
+  margin-right: 15px;
+  background: rgba(40, 40, 40, 0.9);
+  border: 1px solid #58a6ff;
+  box-shadow: 0px 0px 10px rgba(88, 166, 255, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  flex-shrink: 0;
+  overflow: scroll;
+}
+.card pre{
+    font-family:atma;
+}
+.writings h3{
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+} 
+
+
+/* Keyframe Animation for Stars */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes moveStar {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-5px, 5px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .header nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header nav a {
+    margin: 5px;
+  }
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 7px 0px;
+  background-color: #1c1c1c; /* Dark background */
+  color: #ffffff;
+}
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right:39px;
+  float: left;
+}
+
+/* Logo Image */
+.logo {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Web Name */
+.web-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #58a6ff; /* Light blue color */
+  text-transform: uppercase;
+}
+
+/* Navigation Links */
+.header nav a {
+  color: #58a6ff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Light theme styles */
+body.light {
+  background: #bfeaff;
+  color: #0c2093;
+}
+body.light .header{
+    background-color: #00016b;
+}
+body.light .footer{
+    background-color: rgba(88, 166, 255, 0.9);
+}
+body.light .sign{
+    filter: brightness(0) saturate(100%) invert(12%) sepia(96%) saturate(2186%) hue-rotate(226deg) brightness(85%) contrast(115%);
+}
+
+body.light .biodata-box{
+    background: rgba(12, 32, 147, 0.9);
+}
+body.light .writings .card{
+    background: rgba(12, 32, 147, 0.9);
+}
+body.light .facebook-btn{
+    background: rgba(12, 32, 147, 0.9);
+}
+
+/* Toggle Switch Styles */
+.theme-toggle-container {
+  top: 20px;
+  right: 20px;
+  float: right;
+  margin-top:75px;  
+  
+  
+  position: fixed;
+  top: 20px; /* Adjust this to position it where you'd like */
+  right: 20px; /* Adjust this for horizontal positioning */
+  z-index: 999; /* Ensures it stays above other content */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 29px;
+  justify-content: center;
+  margin-top:5px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 17px; /* Adjust icon size */
+  width: 17px; /* Adjust icon size */
+  left: 4px;
+  bottom: 7px;
+  background: url('https://img.icons8.com/?size=100&id=dvBWyhbvWX8g&format=png&color=000000') no-repeat center center;
+  background-size: contain; /* Ensure icon fits properly */
+  transition: 0.4s;
+  border-radius: 50%; /* Keep it circular */
+  background-color: #55a6ff;
+}
+
+input:checked + .slider:before {
+  content: '';
+  background: url('https://img.icons8.com/?size=100&id=60002&format=png&color=000000') no-repeat center center;
+  background-size: contain; /* Ensure icon fits properly */
+  background-color: #ffdc00;
+  transform: translateX(26px); /* Same size as slider movement */
+}
+
+
+/* Make header fixed at the top */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays above other content */
+  background-color: black; /* Adjust if necessary */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional, for some depth */
+  padding: 10px 20px;
+  margin-right: 50;r;
+  /* Add some padding for better appearance */
+}
+
+/* Make the theme toggle fixed at the top right */
+
+
+/* Adjust styles for the rest of the content */
+
+
+
+
+
+
+
+
+.image-gallery {
+    display: flex;
+    gap: ;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.gallery-image {
+    width: ;
+    height: 170px;
+    object-fit: ;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left:2px;
+    border: 3px solid #58a6ff;
+    border-radius: 5px;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: absolute;
+    overflow: hidden;
+    height: ;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+
+.zoomed {
+    transform: scale(2);
+}
+
+.fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+}
+
+.button-container {
+    position: relative; /* Establish a relative position to position the button absolutely */
+    width: 100%; /* Full width to span the viewport */
+    height: calc(25vh - 80px); /* At least full viewport height */
+    margin-top: 0px; /* Respect body margin */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.get-access-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #58a6ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family: 'Cuprum', sans-serif;
+    transform: scale(1); /* Ensure button starts at original scale */
+}
+
+/* Scaled state for the button */
+.get-access-button.scaled {
+    transform: scale(1.2); /* Apply scaling */
+}
+
+
+
+
+
+
+
+
+/* Gallery Container */
+.gallery-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-item {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.1);
+}
+
+/* Fullscreen Overlay */
+.fullscreen-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #0c2093;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 32px;
+  color: white;
+  width: 180px;
+  height: 60px;
+  font-family:cuprum;
+  margin-top: 40px;
+}
+
+.upload-btn img {
+  width: 40px;
+  margin-right: 8px;
+}
+
+.upload-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+.contain {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  border-radius: 10px;
+}
+
+.facebook-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    gap: 10px; /* Space between the icon and text */
+    text-decoration: none;
+    font-size: 18px;
+    color: white; /* Text color */
+    border: 3px solid;
+    border-image-source: linear-gradient(95deg, red, orange, yellow, green, blue, indigo, violet);
+    border-image-slice: 1;
+    background: black; /* Button background */
+    border-radius: 10px;
+    animation: rgb-glow 6s infinite;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius:8px;
+}
+
+
+.facebook-btn img {
+    width: 28px;
+    height: 28px;
+}
+
+@keyframes rgb-glow {
+    0% {
+        border-image-source: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    }
+    100% {
+        border-image-source: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+    }
+}
+
+footer {
+  background-color: #222; /* Dark background */
+  margin-top: 90px;
+  color: white; /* White text */
+  padding: 20px 0; /* Adjust padding for a compact footer */
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px; /* Limit the width for readability */
+  margin: 0 auto; /* Center the content */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.footer-astronaut {
+  margin-right: 20px; /* Add space between astronaut and links */
+}
+
+.footer-astronaut img {
+  width: 200px; /* Size of astronaut image */
+  height: auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column; /* Stack the links vertically */
+  gap: 10px; /* Space between links */
+  justify-content: center; /* Center the links vertically */
+}
+
+.footer-links a {
+  color: #58a6ff; /* Light blue color for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Text size */
+  text-transform: uppercase; /* Make text uppercase */
+}
+
+.footer-links a:hover {
+  color: #4d94cc; /* Hover effect */
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px; /* Space between social icons */
+  justify-content: center; /* Center social icons */
+  }
+.footer-social a {
+  color: #58a6ff; /* Social media link color */
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #4d94cc; /* Hover effect */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack everything vertically on smaller screens */
+    align-items: center; /* Center all items */
+  }
+  .footer-links, .footer-social {
+    margin-top: 10px;
+  }
+}

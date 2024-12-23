@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dxopql8fd/image/upload/v1734945936/20241223_152402_hyxw1c.jpg">
+    <title>Security</title>
+    
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding-top: 30vh;
+            color:white;
+        }
+        .password-container {
+            text-align: center;
+            background: transparent ;
+            padding: 10px;
+            height: 220px;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.7), 0 0 30px rgba(88, 166, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 15px;
+            color: white;
+        }
+        .password-container h1, 
+        .password-container h2, 
+        .password-container p {
+            color: white;
+            text-shadow: 0 0 5px #55acff7c, 0 0 10px #55acff7c, 0 0 15px #58a6ff;
+        }
+        .password-container h1 {
+            font-size: 22px;
+            font-family: fantasy;
+            font-weight:;
+            margin-bottom: 15px;
+            
+        }
+        .password-container h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: inline;
+        }
+        .password-container input {
+            padding: 10px;
+            font-size: 16px;
+            width: 90%;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border: 2px solid white;
+            border-radius: 6px;
+            color: white;
+            background: black;
+            box-shadow: 0 0 10px #55acff7c, 0 0 20px #55acff7c;
+            outline: none;
+        }
+        .password-container input::placeholder {
+            color: #58a6ff;
+        }
+        .password-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: black;
+            border: 2px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-shadow: 0 0 10px #55acff7c, 0 0 20px #55acff7c;
+            box-shadow: 0 0 15px #55acff7c, 0 0 30px #55acff7c;
+        }
+        .password-container button:hover {
+            background-color: #58a6ff;
+            color: white;
+        }
+        #error {
+            font-size: 14px;
+            color: red;
+            margin-top: 10px;
+        }
+        .pass {
+            height: 18px;
+            padding: 0px;
+        }
+        /* Glowing stars effect */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #58a6ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #55acff7c, 0 0 20px #55acff7c;
+            animation: twinkle 2s infinite alternate, moveStar 5s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes moveStar {
+            0% { transform: translate(0px, 0px); }
+            50% { transform: translate(-3px, 3px); }
+            100% { transform: translate(0px, 0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="password-container">
+        <h1>Get Full Gallery Access</h1>
+        <img class="pass" src="https://img.icons8.com/?size=100&id=23206&format=png&color=000000" alt="No Internet" style="filter: brightness(0) invert(1);">
+        <h2>Enter Password</h2>
+        
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error" style="display: none;">Incorrect password, try again!</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "1202425010380"; // Change this to your desired password
+            const userPassword = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error");
+
+            if (userPassword === correctPassword) {
+                window.location.href = "file.html"; // Redirect to your main page
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+
+        // Generate moving stars
+        const starCount = 100;
+        const body = document.body;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            // Randomize initial position
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+
+            // Randomize animation delay and speed
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            star.style.animationDuration = `${1 + Math.random() * 3}s`;
+
+            body.appendChild(star);
+        }
+    </script>
+</body>
+</html>
